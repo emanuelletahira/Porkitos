@@ -23,41 +23,260 @@
     </header>
 
     <main>
-        <h2>Elenco Profissional 2026</h2>
-        <p class="subtitulo">A 6ª temporada da Era Abel Ferreira. A máquina de títulos não para!</p>
-        
-        <div class="grid-container">
-            <div class="card">
-                <h3>Vitor Roque</h3>
-                <p><strong>Posição:</strong> Atacante</p>
-                <p style="margin-top: 10px;">O terror das defesas adversárias!</p>
+        <h2>Esquadrão Alviverde 2026</h2>
+        <p class="subtitulo">A máquina de títulos da Era Abel Ferreira detalhada por quem apoia de verdade.</p>
+
+        <!-- BOTÕES DE FILTRO INTERATIVO -->
+        <div class="filtro-container">
+            <button class="btn-filtro ativo" data-alvo="todos">Todos</button>
+            <button class="btn-filtro" data-alvo="goleiro">Goleiros</button>
+            <button class="btn-filtro" data-alvo="defesa">Defesa</button>
+            <button class="btn-filtro" data-alvo="meio">Meio-Campo</button>
+            <button class="btn-filtro" data-alvo="ataque">Ataque</button>
+        </div>
+
+        <!-- GRID DE JOGADORES -->
+        <div class="grid-jogadores">
+            
+            <!-- GOLEIROS -->
+            <div class="jogador-card" data-categoria="goleiro">
+                <div class="jogador-foto-placeholder">
+                    <span><img src="assets/Aranha.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">24</span>
+                    <h3>Aranha</h3>
+                    <p class="jogador-posicao">Goleiro</p>
+                    <p class="jogador-vibe"> Paredão Histórico / Ídolo</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>Jhon Arias</h3>
-                <p><strong>Posição:</strong> Atacante</p>
-                <p style="margin-top: 10px;">Velocidade e precisão milimétrica no ataque.</p>
+
+            <div class="jogador-card" data-categoria="goleiro">
+                <div class="jogador-foto-placeholder">
+                    <span><img src="assets/Carlos-Miguel.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">1</span>
+                    <h3>Carlos Miguel</h3>
+                    <p class="jogador-posicao">Goleiro</p>
+                    <p class="jogador-vibe"> Paredão Histórico / Ídolo</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>Felipe Anderson</h3>
-                <p><strong>Posição:</strong> Meio-Campista</p>
-                <p style="margin-top: 10px;">O maestro dono do nosso meio de campo.</p>
+
+             <div class="jogador-card" data-categoria="goleiro">
+                <div class="jogador-foto-placeholder">
+                    <span><img src="assets/Lomba.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">14</span>
+                    <h3>Marcelo Lomba</h3>
+                    <p class="jogador-posicao">Goleiro</p>
+                    <p class="jogador-vibe"> Paredão Histórico / Ídolo</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>Gustavo Gómez</h3>
-                <p><strong>Posição:</strong> Zagueiro / Capitão</p>
-                <p style="margin-top: 10px;">A muralha paraguaia, xerife e líder do elenco.</p>
+
+            <!-- DEFESA -->
+            <div class="jogador-card" data-categoria="defesa">
+                <div class="jogador-foto-placeholder">
+                    <span><img src="assets/Benedetti.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">43</span>
+                    <h3>Benedetti</h3>
+                    <p class="jogador-posicao">Zagueiro</p>
+                    <p class="jogador-vibe">🛡️ Xerife / Capitão Absoluto</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>Paulinho</h3>
-                <p><strong>Posição:</strong> Atacante</p>
-                <p style="margin-top: 10px;">Gols, raça e técnica refinada para o Verdão.</p>
+
+            <div class="jogador-card" data-categoria="defesa">
+                <div class="jogador-foto-placeholder">
+                    <span><img src="assets/Bruno-Fuchs.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">3</span>
+                    <h3>Bruno Fuchs</h3>
+                    <p class="jogador-posicao">Zagueiro</p>
+                    <p class="jogador-vibe">🛡️ Xerife / Capitão Absoluto</p>
+                </div>
             </div>
+
+            <div class="jogador-card" data-categoria="defesa">
+                <div class="jogador-foto-placeholder">
+                    <span><img src="assets/Gustavo-Gomez.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">15</span>
+                    <h3>Gustavo Gómez</h3>
+                    <p class="jogador-posicao">Zagueiro</p>
+                    <p class="jogador-vibe">🛡️ Xerife / Capitão Absoluto</p>
+                </div>
+            </div>
+
+            <div class="jogador-card" data-categoria="defesa">
+                <div class="jogador-foto-placeholder">
+                    <span><img src="assets/Murilo.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">26</span>
+                    <h3>Murilo</h3>
+                    <p class="jogador-posicao">Zagueiro</p>
+                    <p class="jogador-vibe">✈️ Monstro no Jogo Aéreo</p>
+                </div>
+            </div>
+
+            <!--    LATERAL DIREITO -->
+            <div class="jogador-card" data-categoria="defesa">
+                <div class="jogador-foto-placeholder">
+                    <span><img src="assets/Giay.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">4</span>
+                    <h3>Agustín Giay</h3>
+                    <p class="jogador-posicao">Zagueiro</p>
+                    <p class="jogador-vibe">✈️ Monstro no Jogo Aéreo</p>
+                </div>
+            </div>
+
+            <!-- MEIO-CAMPO -->
+            <div class="jogador-card" data-categoria="meio">
+                <div class="jogador-foto-placeholder">
+                    <span><img src="assets/Andreas.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">8</span>
+                    <h3>Andreas Pereira</h3>
+                    <p class="jogador-posicao">Meio-Campista</p>
+                    <p class="jogador-vibe">🪄 Maestro / Pura Classe</p>
+                </div>
+            </div>
+
+            <div class="jogador-card" data-categoria="meio">
+                <div class="jogador-foto-placeholder">
+                   <span><img src="assets/Emiliano-Martinez.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">32</span>
+                    <h3>Emiliano Martínez</h3>
+                    <p class="jogador-posicao">Meio-Campista</p>
+                    <p class="jogador-vibe">⚓ O Motorzinho do Meio</p>
+                </div>
+            </div>
+
+            <div class="jogador-card" data-categoria="meio">
+                <div class="jogador-foto-placeholder">
+                   <span><img src="assets/F.Anderson.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">7</span>
+                    <h3>Felipe Anderson</h3>
+                    <p class="jogador-posicao">Meio-Campista</p>
+                    <p class="jogador-vibe">⚓ O Motorzinho do Meio</p>
+                </div>
+            </div>
+
+             <div class="jogador-card" data-categoria="meio">
+                <div class="jogador-foto-placeholder">
+                   <span><img src="assets/Figueiredo.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">38</span>
+                    <h3>Figueiredo</h3>
+                    <p class="jogador-posicao">Meio-Campista</p>
+                    <p class="jogador-vibe">⚓ O Motorzinho do Meio</p>
+                </div>
+            </div>
+
+            <div class="jogador-card" data-categoria="meio">
+                <div class="jogador-foto-placeholder">
+                   <span><img src="assets/Larsson.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">48</span>
+                    <h3>Larson</h3>
+                    <p class="jogador-posicao">Meio-Campista</p>
+                    <p class="jogador-vibe">⚓ O Motorzinho do Meio</p>
+                </div>
+            </div>
+
+            <div class="jogador-card" data-categoria="meio">
+                <div class="jogador-foto-placeholder">
+                   <span><img src="assets/Evangelista.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">30</span>
+                    <h3>Lucas Evangelista</h3>
+                    <p class="jogador-posicao">Meio-Campista</p>
+                    <p class="jogador-vibe">⚓ O Motorzinho do Meio</p>
+                </div>
+            </div>
+
+            <div class="jogador-card" data-categoria="meio">
+                <div class="jogador-foto-placeholder">
+                   <span><img src="assets/Marlon.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">17</span>
+                    <h3>Marlon Freitas</h3>
+                    <p class="jogador-posicao">Meio-Campista</p>
+                    <p class="jogador-vibe">⚓ O Motorzinho do Meio</p>
+                </div>
+            </div>
+
+            <div class="jogador-card" data-categoria="meio">
+                <div class="jogador-foto-placeholder">
+                   <span><img src="assets/Mauricio.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">18</span>
+                    <h3>Mauricio</h3>
+                    <p class="jogador-posicao">Meio-Campista</p>
+                    <p class="jogador-vibe">⚓ O Motorzinho do Meio</p>
+                </div>
+            </div>
+
+            <!-- ATAQUE -->
+            <div class="jogador-card" data-categoria="ataque">
+                <div class="jogador-foto-placeholder">
+                    <span><img src="assets/Murilo.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">40</span>
+                    <h3>Allan</h3>
+                    <p class="jogador-posicao">Atacante</p>
+                    <p class="jogador-vibe">🔥 O Terror dos Rivais</p>
+                </div>
+            </div>
+
+            <div class="jogador-card" data-categoria="ataque">
+                <div class="jogador-foto-placeholder">
+                    <span><img src="assets/jhon-arias.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">11</span>
+                    <h3>Jhon Arias</h3>
+                    <p class="jogador-posicao">Atacante</p>
+                    <p class="jogador-vibe">⚡ Velocidade Pura</p>
+                </div>
+            </div>
+
+            <div class="jogador-card" data-categoria="ataque">
+                <div class="jogador-foto-placeholder">
+                    <span><img src="assets/Paulinho.png"></span>
+                </div>
+                <div class="jogador-info">
+                    <span class="jogador-numero">7</span>
+                    <h3>Paulinho</h3>
+                    <p class="jogador-posicao">Atacante</p>
+                    <p class="jogador-vibe">🎯 Artilheiro Nato</p>
+                </div>
+            </div>
+
         </div>
     </main>
 
     <footer>
         <p>&copy; 2026 Porkitos. Feito por torcedor para torcedor.</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

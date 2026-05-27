@@ -418,3 +418,145 @@ footer {
 @media screen and (max-width: 600px) {
     .mancha-galeria { grid-template-columns: 1fr; }
 }
+/* BOTÃO DO PLAYER DE ÁUDIO */
+.btn-player {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid var(--verde-claro);
+    color: var(--texto-claro);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-player:hover {
+    background-color: var(--verde-claro);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 158, 84, 0.4);
+}
+
+/* Classe especial para quando a música estiver tocando (fica dourado) */
+.btn-player.tocando {
+    background-color: var(--dourado);
+    border-color: var(--dourado);
+    color: #000;
+}
+
+/* SEÇÃO DE FILTROS DO ELENCO */
+.filtro-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.btn-filtro {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    color: var(--texto-claro);
+    padding: 10px 25px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.btn-filtro:hover, .btn-filtro.ativo {
+    background-color: var(--verde-palmeiras);
+    border-color: var(--verde-claro);
+    box-shadow: 0 0 10px rgba(0, 158, 84, 0.4);
+}
+
+/* GRID E CARDS DE JOGADORES */
+.grid-jogadores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.jogador-card {
+    background-color: #161616;
+    border: 1px solid #252525;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Efeito ao passar o mouse */
+.jogador-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--verde-claro);
+    box-shadow: 0 8px 25px rgba(0, 99, 55, 0.4);
+}
+
+/* Espaço para as futuras fotos dos atletas */
+.jogador-foto-placeholder {
+    background-color: #222;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.jogador-foto-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.jogador-info {
+    padding: 20px;
+    position: relative;
+    text-align: left;
+}
+
+.jogador-info h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.jogador-posicao {
+    color: var(--dourado);
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.jogador-vibe {
+    font-size: 0.95rem;
+    color: #ccc;
+    font-style: italic;
+}
+
+/* Número da camisa estilizado no canto */
+.jogador-numero {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.07); /* Fica clarinho no fundo do card */
+    transition: color 0.3s ease;
+}
+
+.jogador-card:hover .jogador-numero {
+    color: rgba(0, 158, 84, 0.2); /* Acende em verde no hover */
+}
