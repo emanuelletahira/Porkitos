@@ -95,20 +95,59 @@ document.addEventListener("DOMContentLoaded", function() {
 // Função para filtrar os troféus da sala de conquistas
 // Sistema de Expansão da História de 1951
 document.addEventListener("DOMContentLoaded", function() {
+    
+    // 1. INTERAÇÃO DO MUNDIAL DE 1951
     const btnMundial = document.getElementById("btn-mundial");
     const blocoHistoria = document.getElementById("historia-51");
 
     if (btnMundial && blocoHistoria) {
         btnMundial.addEventListener("click", function() {
             blocoHistoria.classList.toggle("aberto");
-            
-            // Altera o texto da dica para melhorar a experiência
             const instrucao = btnMundial.querySelector(".clique-instrucao");
             if (blocoHistoria.classList.contains("aberto")) {
-                instrucao.textContent = "✨ Clique para fechar a história";
+                instrucao.textContent = " Clique para fechar a história";
             } else {
-                instrucao.textContent = "✨ Clique para abrir a história da Copa Rio";
+                instrucao.textContent = " Clique para abrir a história do Mundial";
             }
+        });
+    }
+
+    // 2. INTERAÇÃO DA LINHA DO TEMPO DOS OUTROS CAMPEONATOS
+    const cardsTrofeu = document.querySelectorAll(".trofeu-card.clicavel");
+    const painelAnos = document.getElementById("painel-anos");
+    const tituloDinamico = document.getElementById("galeria-titulo-dinamico");
+    const btnFechar = document.getElementById("btn-fechar-galeria");
+    const abasFotos = document.querySelectorAll(".aba-fotos-campeonato");
+
+    cardsTrofeu.forEach(card => {
+        card.addEventListener("click", function() {
+            const galeriaAlvo = this.getAttribute("data-galeria");
+            const nomeCampeonato = this.querySelector("h3").textContent;
+
+            // Oculta todas as outras sub-galerias primeiro
+            abasFotos.forEach(aba => aba.style.display = "none");
+
+            // Ativa o container específico clicado
+            const abaAlvo = document.getElementById(`galeria-${galeriaAlvo}`);
+            if (abaAlvo) {
+                abaAlvo.style.display = "block";
+                tituloDinamico.textContent = `${nomeCampeonato} - Galeria de Imagens`;
+                
+                // Abre o painel geral esticando a altura
+                painelAnos.classList.add("aberto");
+
+                // Rola a tela até o painel aparecer perfeitamente pro usuário
+                setTimeout(() => {
+                    painelAnos.scrollIntoView({ behavior: "smooth", block: "nearest" });
+                }, 250);
+            }
+        });
+    });
+
+    // Evento de fechar a galeria
+    if (btnFechar && painelAnos) {
+        btnFechar.addEventListener("click", function() {
+            painelAnos.classList.remove("aberto");
         });
     }
 });

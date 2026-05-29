@@ -822,3 +822,103 @@ footer {
         font-size: 2rem;
     }
 }
+
+/* CONTAINER PRINCIPAL DA GALERIA (INICIA ADORMECIDO) */
+.painel-galeria-anos {
+    max-height: 0;
+    overflow: hidden;
+    background: #151515;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    margin-top: 30px;
+    transition: max-height 0.6s ease-in-out, border 0.3s;
+}
+
+/* Classe ativada por JS para abrir o painel */
+.painel-galeria-anos.aberto {
+    max-height: 2000px; /* Permitir espaço para as fotos */
+    border-color: #d4af37;
+    padding: 30px 20px;
+}
+
+/* TOPO DO PAINEL */
+.galeria-anos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #252525;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.galeria-anos-header h3 {
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+#btn-fechar-galeria {
+    background: transparent;
+    border: 1px solid #444;
+    color: #aaa;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#btn-fechar-galeria:hover {
+    background: #c62828;
+    color: white;
+    border-color: #c62828;
+}
+
+/* GRID DE IMAGENS DOS ANOS */
+.grid-fotos-anos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* CARD DE CADA FOTO HISTÓRICA */
+.foto-ano-card {
+    background: #0b0b0b;
+    border: 1px solid #222;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.foto-ano-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.foto-ano-card:hover {
+    transform: translateY(-4px);
+    border-color: #d4af37;
+}
+
+.foto-ano-card:hover img {
+    transform: scale(1.05);
+}
+
+/* LABEL DO ANO DO TÍTULO */
+.foto-ano-label {
+    display: block;
+    padding: 10px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    background: linear-gradient(to top, #111, #0b0b0b);
+    border-top: 1px solid #222;
+}
+
+/* Cursor pointer para indicar clique nas taças */
+.trofeu-card.clicavel {
+    cursor: pointer;
+}
