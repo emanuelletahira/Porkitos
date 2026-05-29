@@ -23,31 +23,127 @@
     </header>
 
     <main>
-        <h2>Sala de Troféus Atualizada</h2>
-        <p class="subtitulo">Quem tem mais, tem mais. E ponto final!</p>
+       <div class="sala-trofeus-container">
+    <div class="titulo-secao">
+        <h2>Galeria de Conquistas</h2>
+        <p>A história escrita em ouro. Conheça as maiores glórias do maior campeão do Brasil.</p>
+    </div>
 
-        <div class="grid-container">
-            <div class="card card-dourado">
-                <h3>Paulistão 2026</h3>
-                <p><strong>O 27º Título Estadual</strong></p>
-                <p style="font-size: 0.95rem; margin-top: 15px; color: #ccc;">Vitória incontestável sobre o Novorizontino. São Paulo continua verde!</p>
+    <!-- BANNER DE DESTAQUE: MUNDIAL DE 1951 (CLICÁVEL) -->
+    <div class="mundial-banner-card" id="btn-mundial">
+        <div class="mundial-banner-overlay"></div>
+        <div class="mundial-banner-conteudo">
+            <div class="mundial-trofeu-box">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2019/08/29144405/taca-mundial-51.png" alt="Taça Rio 1951" class="mundial-trofeu-img">
+                <div class="trofeu-badge-qtd">1</div>
             </div>
-            <div class="card card-dourado">
-                <h3>Troféu Clássico da Saudade</h3>
-                <p><strong>Tricampeões (2024, 2025, 2026)</strong></p>
-                <p style="font-size: 0.95rem; margin-top: 15px; color: #ccc;">Ninguém consegue segurar a nossa grande freguesia recente.</p>
-            </div>
-            <div class="card card-dourado">
-                <h3>Campeonato Brasileiro</h3>
-                <p><strong>O Dodeca (12 Vezes Campeão)</strong></p>
-                <p style="font-size: 0.95rem; margin-top: 15px; color: #ccc;">Isolado como o Maior Campeão Nacional da história do país.</p>
+            <div class="mundial-texto-box">
+                <span class="trofeu-anos">1951 • O Primeiro Campeão Mundial</span>
+                <h2>Mundial Interclubes</h2>
+                <p class="clique-instrucao"> Clique para abrir a história do Mundial</p>
             </div>
         </div>
+    </div>
+
+    <!-- SEÇÃO EXPANSÍVEL DA HISTÓRIA (SÓ APARECE AO CLICAR) -->
+    <div class="mundial-historia-expansao" id="historia-51">
+        <div class="historia-conteudo">
+            <h3>A Epopeia de 1951: O Brasil Lavou a Alma</h3>
+            <p>Em um Maracanã ainda marcado pelo trauma da Copa do Mundo de 1950, o Palmeiras carregou no peito a responsabilidade de representar toda uma nação no primeiro torneio interclubes de alcance mundial, planejado com a chancela de dirigentes da FIFA.</p>
+            <p>Enfrentando a temida <strong>Juventus da Itália</strong> na grande final de duas partidas, o Verdão garantiu o título de forma heroica: venceu o primeiro confronto por 1 a 0 e segurou um eletrizante 2 a 2 no segundo jogo. O gol antológico de Liminha decretou o empate que fez o país inteiro chorar de orgulho, colorindo o Brasil de verde e branco.</p>
+            <blockquote>"O Palmeiras foi o campeão do mundo de clubes de 1951. Foi o pioneiro."</blockquote>
+        </div>
+    </div>
+
+    <!-- GRID COM AS DEMAIS TAÇAS (IGUAL AO DA FOTO) -->
+    <div class="grid-trofeus">
+        
+        <!-- TAÇA 1: LIBERTADORES -->
+        <div class="trofeu-card">
+            <div class="trofeu-icone-wrapper">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2019/08/libertadores-galeria-de-titulos.png" alt="Copa Libertadores" class="trofeu-img">
+                <div class="trofeu-badge-qtd">3</div>
+            </div>
+            <div class="trofeu-info">
+                <h3>Copa Libertadores</h3>
+                <span class="trofeu-anos">1999 • 2020 • 2021</span>
+                <p class="trofeu-descricao">A Glória Eterna. As noites mágicas de América conquistadas com raça, estratégia e a obsessão da nossa torcida.</p>
+            </div>
+        </div>
+
+        <!-- TAÇA 2: BRASILEIRÃO -->
+        <div class="trofeu-card">
+            <div class="trofeu-icone-wrapper">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2023/12/2023.png" alt="Campeonato Brasileiro" class="trofeu-img">
+                <div class="trofeu-badge-qtd">12</div>
+            </div>
+            <div class="trofeu-info">
+                <h3>Campeonato Brasileiro</h3>
+                <span class="trofeu-anos">Maior Campeão do Brasil</span>
+                <p class="trofeu-descricao">A prova definitiva da nossa regularidade e soberania nacional ao longo da história do futebol brasileiro.</p>
+            </div>
+        </div>
+
+        <!-- TAÇA 3: COPA DO BRASIL -->
+        <div class="trofeu-card">
+            <div class="trofeu-icone-wrapper">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2019/09/2015.png" alt="Copa do Brasil" class="trofeu-img">
+                <div class="trofeu-badge-qtd">4</div>
+            </div>
+            <div class="trofeu-info">
+                <h3>Copa do Brasil</h3>
+                <span class="trofeu-anos">1998 • 2012 • 2015 • 2020</span>
+                <p class="trofeu-descricao">O campeonato mais democrático do país, conquistado em finais épicas que testaram o coração do torcedor.</p>
+            </div>
+        </div>
+
+        <!-- TAÇA 4: COPA MERCOSUL -->
+        <div class="trofeu-card">
+            <div class="trofeu-icone-wrapper">
+                <img src="assets/trofeus/mercosul.png" alt="Copa Mercosul" class="trofeu-img">
+                <div class="trofeu-badge-qtd">1</div>
+            </div>
+            <div class="trofeu-info">
+                <h3>Copa Mercosul</h3>
+                <span class="trofeu-anos">1998</span>
+                <p class="trofeu-descricao">A virada do século marcada por uma das finais mais inacreditáveis e heroicas do futebol continental.</p>
+            </div>
+        </div>
+
+        <!-- TAÇA 5: RECOPA SUL-AMERICANA -->
+        <div class="trofeu-card">
+            <div class="trofeu-icone-wrapper">
+                <img src="assets/trofeus/recopa.png" alt="Recopa Sul-Americana" class="trofeu-img">
+                <div class="trofeu-badge-qtd">1</div>
+            </div>
+            <div class="trofeu-info">
+                <h3>Recopa Sul-Americana</h3>
+                <span class="trofeu-anos">2022</span>
+                <p class="trofeu-descricao">O confronto dos reis da América, dominado com autoridade no Allianz Parque.</p>
+            </div>
+        </div>
+
+        <!-- TAÇA 6: CAMPEONATO PAULISTA -->
+        <div class="trofeu-card">
+            <div class="trofeu-icone-wrapper">
+                <img src="assets/trofeus/paulista.png" alt="Campeonato Paulista" class="trofeu-img">
+                <div class="trofeu-badge-qtd">26</div>
+            </div>
+            <div class="trofeu-info">
+                <h3>Campeonato Paulista</h3>
+                <span class="trofeu-anos">Soberania Estadual</span>
+                <p class="trofeu-descricao">Tradição secular. O domínio absoluto de São Paulo, desde a época do Palestra Itália até o tri-campeonato recente.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
     </main>
 
     <footer>
         <p>&copy; 2026 Porkitos. Feito por torcedor para torcedor.</p>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="app.js"></script>
 </body>
 </html>

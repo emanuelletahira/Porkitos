@@ -21,258 +21,810 @@
             </ul>
         </nav>
     </header>
+<main>
+    <h1>Elenco Principal</h1>
+    <p class="subtitulo">Conheça os atletas que defendem as cores do Verdão.</p>
 
-    <main>
-        <h2>Esquadrão Alviverde 2026</h2>
-        <p class="subtitulo">A máquina de títulos da Era Abel Ferreira detalhada por quem apoia de verdade.</p>
+   <div class="filtro-container">
+    <button class="btn-filtro ativo" data-alvo="elenco">Elenco</button>
+    <button class="btn-filtro" data-alvo="comissao">Comissão Técnica</button>
+    <button class="btn-filtro" data-alvo="saude">Núcleo de Saúde</button>
+</div>
 
-        <!-- BOTÕES DE FILTRO INTERATIVO -->
-        <div class="filtro-container">
-            <button class="btn-filtro ativo" data-alvo="todos">Todos</button>
-            <button class="btn-filtro" data-alvo="goleiro">Goleiros</button>
-            <button class="btn-filtro" data-alvo="defesa">Defesa</button>
-            <button class="btn-filtro" data-alvo="meio">Meio-Campo</button>
-            <button class="btn-filtro" data-alvo="ataque">Ataque</button>
+    <div class="grid-jogadores">
+        
+        <!-- ==================== GOLEIROS ==================== -->
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Carlos-Miguel.png" alt="Carlos Miguel">
+            </div>
+            <div class="jogador-info">
+                <h3>Carlos Miguel</h3>
+                <span class="jogador-posicao">Goleiro</span>
+                <p class="jogador-vibe">Envergadura gigante e elasticidade para fechar o gol alviverde.</p>
+                <span class="jogador-numero">1</span>
+            </div>
         </div>
 
-        <!-- GRID DE JOGADORES -->
-        <div class="grid-jogadores">
-            
-            <!-- GOLEIROS -->
-            <div class="jogador-card" data-categoria="goleiro">
-                <div class="jogador-foto-placeholder">
-                    <span><img src="assets/Aranha.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">24</span>
-                    <h3>Aranha</h3>
-                    <p class="jogador-posicao">Goleiro</p>
-                    <p class="jogador-vibe"> Paredão Histórico / Ídolo</p>
-                </div>
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Lomba.png" alt="Marcelo Lomba">
             </div>
-
-            <div class="jogador-card" data-categoria="goleiro">
-                <div class="jogador-foto-placeholder">
-                    <span><img src="assets/Carlos-Miguel.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">1</span>
-                    <h3>Carlos Miguel</h3>
-                    <p class="jogador-posicao">Goleiro</p>
-                    <p class="jogador-vibe"> Paredão Histórico / Ídolo</p>
-                </div>
+            <div class="jogador-info">
+                <h3>Marcelo Lomba</h3>
+                <span class="jogador-posicao">Goleiro</span>
+                <p class="jogador-vibe">Experiência, segurança e liderança nos momentos decisivos.</p>
+                <span class="jogador-numero">14</span>
             </div>
-
-             <div class="jogador-card" data-categoria="goleiro">
-                <div class="jogador-foto-placeholder">
-                    <span><img src="assets/Lomba.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">14</span>
-                    <h3>Marcelo Lomba</h3>
-                    <p class="jogador-posicao">Goleiro</p>
-                    <p class="jogador-vibe"> Paredão Histórico / Ídolo</p>
-                </div>
-            </div>
-
-            <!-- DEFESA -->
-            <div class="jogador-card" data-categoria="defesa">
-                <div class="jogador-foto-placeholder">
-                    <span><img src="assets/Benedetti.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">43</span>
-                    <h3>Benedetti</h3>
-                    <p class="jogador-posicao">Zagueiro</p>
-                    <p class="jogador-vibe">🛡️ Xerife / Capitão Absoluto</p>
-                </div>
-            </div>
-
-            <div class="jogador-card" data-categoria="defesa">
-                <div class="jogador-foto-placeholder">
-                    <span><img src="assets/Bruno-Fuchs.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">3</span>
-                    <h3>Bruno Fuchs</h3>
-                    <p class="jogador-posicao">Zagueiro</p>
-                    <p class="jogador-vibe">🛡️ Xerife / Capitão Absoluto</p>
-                </div>
-            </div>
-
-            <div class="jogador-card" data-categoria="defesa">
-                <div class="jogador-foto-placeholder">
-                    <span><img src="assets/Gustavo-Gomez.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">15</span>
-                    <h3>Gustavo Gómez</h3>
-                    <p class="jogador-posicao">Zagueiro</p>
-                    <p class="jogador-vibe">🛡️ Xerife / Capitão Absoluto</p>
-                </div>
-            </div>
-
-            <div class="jogador-card" data-categoria="defesa">
-                <div class="jogador-foto-placeholder">
-                    <span><img src="assets/Murilo.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">26</span>
-                    <h3>Murilo</h3>
-                    <p class="jogador-posicao">Zagueiro</p>
-                    <p class="jogador-vibe">✈️ Monstro no Jogo Aéreo</p>
-                </div>
-            </div>
-
-            <!--    LATERAL DIREITO -->
-            <div class="jogador-card" data-categoria="defesa">
-                <div class="jogador-foto-placeholder">
-                    <span><img src="assets/Giay.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">4</span>
-                    <h3>Agustín Giay</h3>
-                    <p class="jogador-posicao">Zagueiro</p>
-                    <p class="jogador-vibe">✈️ Monstro no Jogo Aéreo</p>
-                </div>
-            </div>
-
-            <!-- MEIO-CAMPO -->
-            <div class="jogador-card" data-categoria="meio">
-                <div class="jogador-foto-placeholder">
-                    <span><img src="assets/Andreas.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">8</span>
-                    <h3>Andreas Pereira</h3>
-                    <p class="jogador-posicao">Meio-Campista</p>
-                    <p class="jogador-vibe">🪄 Maestro / Pura Classe</p>
-                </div>
-            </div>
-
-            <div class="jogador-card" data-categoria="meio">
-                <div class="jogador-foto-placeholder">
-                   <span><img src="assets/Emiliano-Martinez.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">32</span>
-                    <h3>Emiliano Martínez</h3>
-                    <p class="jogador-posicao">Meio-Campista</p>
-                    <p class="jogador-vibe">⚓ O Motorzinho do Meio</p>
-                </div>
-            </div>
-
-            <div class="jogador-card" data-categoria="meio">
-                <div class="jogador-foto-placeholder">
-                   <span><img src="assets/F.Anderson.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">7</span>
-                    <h3>Felipe Anderson</h3>
-                    <p class="jogador-posicao">Meio-Campista</p>
-                    <p class="jogador-vibe">⚓ O Motorzinho do Meio</p>
-                </div>
-            </div>
-
-             <div class="jogador-card" data-categoria="meio">
-                <div class="jogador-foto-placeholder">
-                   <span><img src="assets/Figueiredo.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">38</span>
-                    <h3>Figueiredo</h3>
-                    <p class="jogador-posicao">Meio-Campista</p>
-                    <p class="jogador-vibe">⚓ O Motorzinho do Meio</p>
-                </div>
-            </div>
-
-            <div class="jogador-card" data-categoria="meio">
-                <div class="jogador-foto-placeholder">
-                   <span><img src="assets/Larsson.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">48</span>
-                    <h3>Larson</h3>
-                    <p class="jogador-posicao">Meio-Campista</p>
-                    <p class="jogador-vibe">⚓ O Motorzinho do Meio</p>
-                </div>
-            </div>
-
-            <div class="jogador-card" data-categoria="meio">
-                <div class="jogador-foto-placeholder">
-                   <span><img src="assets/Evangelista.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">30</span>
-                    <h3>Lucas Evangelista</h3>
-                    <p class="jogador-posicao">Meio-Campista</p>
-                    <p class="jogador-vibe">⚓ O Motorzinho do Meio</p>
-                </div>
-            </div>
-
-            <div class="jogador-card" data-categoria="meio">
-                <div class="jogador-foto-placeholder">
-                   <span><img src="assets/Marlon.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">17</span>
-                    <h3>Marlon Freitas</h3>
-                    <p class="jogador-posicao">Meio-Campista</p>
-                    <p class="jogador-vibe">⚓ O Motorzinho do Meio</p>
-                </div>
-            </div>
-
-            <div class="jogador-card" data-categoria="meio">
-                <div class="jogador-foto-placeholder">
-                   <span><img src="assets/Mauricio.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">18</span>
-                    <h3>Mauricio</h3>
-                    <p class="jogador-posicao">Meio-Campista</p>
-                    <p class="jogador-vibe">⚓ O Motorzinho do Meio</p>
-                </div>
-            </div>
-
-            <!-- ATAQUE -->
-            <div class="jogador-card" data-categoria="ataque">
-                <div class="jogador-foto-placeholder">
-                    <span><img src="assets/Allan.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">40</span>
-                    <h3>Allan</h3>
-                    <p class="jogador-posicao">Atacante</p>
-                    <p class="jogador-vibe">🔥 O Terror dos Rivais</p>
-                </div>
-            </div>
-
-            <div class="jogador-card" data-categoria="ataque">
-                <div class="jogador-foto-placeholder">
-                    <span><img src="assets/jhon-arias.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">11</span>
-                    <h3>Jhon Arias</h3>
-                    <p class="jogador-posicao">Atacante</p>
-                    <p class="jogador-vibe">⚡ Velocidade Pura</p>
-                </div>
-            </div>
-
-            <div class="jogador-card" data-categoria="ataque">
-                <div class="jogador-foto-placeholder">
-                    <span><img src="assets/Paulinho.png"></span>
-                </div>
-                <div class="jogador-info">
-                    <span class="jogador-numero">7</span>
-                    <h3>Paulinho</h3>
-                    <p class="jogador-posicao">Atacante</p>
-                    <p class="jogador-vibe">🎯 Artilheiro Nato</p>
-                </div>
-            </div>
-
         </div>
-    </main>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Aranha.png" alt="Aranha">
+            </div>
+            <div class="jogador-info">
+                <h3>Aranha</h3>
+                <span class="jogador-posicao">Goleiro</span>
+                <p class="jogador-vibe">Jovem promessa trabalhando com segurança e reflexos rápidos.</p>
+                <span class="jogador-numero">24</span>
+            </div>
+        </div>
+
+
+        <!-- ==================== DEFESA (ZAGUEIROS E LATERAIS) ==================== -->
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Bruno-Fuchs.png" alt="Bruno Fuchs">
+            </div>
+            <div class="jogador-info">
+                <h3>Bruno Fuchs</h3>
+                <span class="jogador-posicao">Zagueiro</span>
+                <p class="jogador-vibe">Excelente saída de bola, técnica refinada e antecipação precisa.</p>
+                <span class="jogador-numero">3</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Giay.png" alt="Agustín Giay">
+            </div>
+            <div class="jogador-info">
+                <h3>Agustín Giay</h3>
+                <span class="jogador-posicao">Lateral Direito</span>
+                <p class="jogador-vibe">Raça argentina pura, intensidade máxima e firmeza na marcação.</p>
+                <span class="jogador-numero">4</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Jefte.png" alt="Jefté">
+            </div>
+            <div class="jogador-info">
+                <h3>Jefté</h3>
+                <span class="jogador-posicao">Lateral Esquerdo</span>
+                <p class="jogador-vibe">Habilidade, drible em velocidade e muito apoio ofensivo na ala.</p>
+                <span class="jogador-numero">6</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Khellven.png" alt="Khellven">
+            </div>
+            <div class="jogador-info">
+                <h3>Khellven</h3>
+                <span class="jogador-posicao">Lateral Direito</span>
+                <p class="jogador-vibe">Cruzamentos cirúrgicos e fôlego interminável pelo corredor direito.</p>
+                <span class="jogador-numero">12</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Gustavo-Gomez.png" alt="Gustavo Gómez">
+            </div>
+            <div class="jogador-info">
+                <h3>Gustavo Gómez</h3>
+                <span class="jogador-posicao">Zagueiro</span>
+                <p class="jogador-vibe">O xerife paraguaio, capitão histórico que impõe respeito absoluto.</p>
+                <span class="jogador-numero">15</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Piquerez.png" alt="Joaquín Piquerez">
+            </div>
+            <div class="jogador-info">
+                <h3>Joaquín Piquerez</h3>
+                <span class="jogador-posicao">Lateral Esquerdo</span>
+                <p class="jogador-vibe">Garra charrua na defesa e muita qualidade técnica no apoio.</p>
+                <span class="jogador-numero">22</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Murilo.png" alt="Murilo">
+            </div>
+            <div class="jogador-info">
+                <h3>Murilo</h3>
+                <span class="jogador-posicao">Zagueiro</span>
+                <p class="jogador-vibe">Segurança total por baixo e uma verdadeira arma fatal na bola aérea.</p>
+                <span class="jogador-numero">26</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Benedetti.png" alt="Benedetti">
+            </div>
+            <div class="jogador-info">
+                <h3>Benedetti</h3>
+                <span class="jogador-posicao">Zagueiro</span>
+                <p class="jogador-vibe">Zagueiro imponente com excelente tempo de bola e força física.</p>
+                <span class="jogador-numero">43</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Arthur.png" alt="Arthur">
+            </div>
+            <div class="jogador-info">
+                <h3>Arthur</h3>
+                <span class="jogador-posicao">Lateral Esquerdo</span>
+                <p class="jogador-vibe">Versatilidade tática, recomposição rápida e solidez defensiva.</p>
+                <span class="jogador-numero">56</span>
+            </div>
+        </div>
+
+
+        <!-- ==================== MEIO-CAMPO ==================== -->
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/F.Anderson.png" alt="Felipe Anderson">
+            </div>
+            <div class="jogador-info">
+                <h3>Felipe Anderson</h3>
+                <span class="jogador-posicao">Meio-Campista</span>
+                <p class="jogador-vibe">A magia e refino do futebol europeu regendo nossa meiúca.</p>
+                <span class="jogador-numero">7</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Andreas.png" alt="Andreas Pereira">
+            </div>
+            <div class="jogador-info">
+                <h3>Andreas Pereira</h3>
+                <span class="jogador-posicao">Meio-Campista</span>
+                <p class="jogador-vibe">Visão de jogo espetacular, passes cirúrgicos e mestre na bola parada.</p>
+                <span class="jogador-numero">8</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Marlon.png" alt="Marlon Freitas">
+            </div>
+            <div class="jogador-info">
+                <h3>Marlon Freitas</h3>
+                <span class="jogador-posicao">Meio-Campista</span>
+                <p class="jogador-vibe">O ritmista do meio-campo, dita o jogo com tranquilidade e inteligência.</p>
+                <span class="jogador-numero">17</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Mauricio.png" alt="Mauricio">
+            </div>
+            <div class="jogador-info">
+                <h3>Mauricio</h3>
+                <span class="jogador-posicao">Meio-Campista</span>
+                <p class="jogador-vibe">Infiltração agressiva na área e muita dinâmica na armação de jogadas.</p>
+                <span class="jogador-numero">18</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Evangelista.png" alt="Lucas Evangelista">
+            </div>
+            <div class="jogador-info">
+                <h3>Lucas Evangelista</h3>
+                <span class="jogador-posicao">Meio-Campista</span>
+                <p class="jogador-vibe">Equilíbrio perfeito entre defesa e ataque com passes qualificados.</p>
+                <span class="jogador-numero">30</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Emiliano-Martinez.png" alt="Emiliano Martínez">
+            </div>
+            <div class="jogador-info">
+                <h3>Emiliano Martínez</h3>
+                <span class="jogador-posicao">Meio-Campista</span>
+                <p class="jogador-vibe">Combate incansável no meio, desarmes precisos e transição forte.</p>
+                <span class="jogador-numero">32</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Figueiredo.png" alt="Figueiredo">
+            </div>
+            <div class="jogador-info">
+                <h3>Figueiredo</h3>
+                <span class="jogador-posicao">Meio-Campista</span>
+                <p class="jogador-vibe">Muita intensidade física, polivalência e forte chute de média distância.</p>
+                <span class="jogador-numero">38</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Larsson.png" alt="Larson">
+            </div>
+            <div class="jogador-info">
+                <h3>Larson</h3>
+                <span class="jogador-posicao">Meio-Campista</span>
+                <p class="jogador-vibe">Jovem dinâmico com excelente leitura de espaços e chegada surpresa.</p>
+                <span class="jogador-numero">48</span>
+            </div>
+        </div>
+
+
+        <!-- ==================== ATAQUE ==================== -->
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Vitor-Roque.png" alt="Vitor Roque">
+            </div>
+            <div class="jogador-info">
+                <h3>Vitor Roque</h3>
+                <span class="jogador-posicao">Atacante</span>
+                <p class="jogador-vibe">O 'Tigrinho' faminto por gols, explosão física e instinto matador.</p>
+                <span class="jogador-numero">9</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Paulinho.png" alt="Paulinho">
+            </div>
+            <div class="jogador-info">
+                <h3>Paulinho</h3>
+                <span class="jogador-posicao">Atacante</span>
+                <p class="jogador-vibe">O camisa 10 letal, movimentação inteligente e finalização cirúrgica.</p>
+                <span class="jogador-numero">10</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Jhon-Arias.png" alt="Jhon Arias">
+            </div>
+            <div class="jogador-info">
+                <h3>Jhon Arias</h3>
+                <span class="jogador-posicao">Atacante</span>
+                <p class="jogador-vibe">Ginga colombiana, velocidade absurda e criatividade pelas pontas.</p>
+                <span class="jogador-numero">11</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Sosa.png" alt="Ramón Sosa">
+            </div>
+            <div class="jogador-info">
+                <h3>Ramón Sosa</h3>
+                <span class="jogador-posicao">Atacante</span>
+                <p class="jogador-vibe">Arrancadas imparáveis, drible agudo e agressividade no um contra um.</p>
+                <span class="jogador-numero">19</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Luighi.png" alt="Luighi">
+            </div>
+            <div class="jogador-info">
+                <h3>Luighi</h3>
+                <span class="jogador-posicao">Atacante</span>
+                <p class="jogador-vibe">A joia da base alviverde com posicionamento impecável na área.</p>
+                <span class="jogador-numero">31</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Allan.png" alt="Allan">
+            </div>
+            <div class="jogador-info">
+                <h3>Allan</h3>
+                <span class="jogador-posicao">Atacante</span>
+                <p class="jogador-vibe">Velocidade explosiva para quebrar linhas e servir os companheiros.</p>
+                <span class="jogador-numero">40</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="elenco">
+            <div class="jogador-foto-placeholder">
+                <img src="assets/Flaco.png" alt="López">
+            </div>
+            <div class="jogador-info">
+                <h3>López</h3>
+                <span class="jogador-posicao">Atacante</span>
+                <p class="jogador-vibe">O 'Flaco' artilheiro, soberano no jogo aéreo e faro de gol apurado.</p>
+                <span class="jogador-numero">42</span>
+            </div>
+        </div>
+
+<!-- ==================== NÚCLEO DE SAÚDE (NSP) ================= -->
+        <!-- ============================================================ -->
+
+        <!-- DIRETORIA E COORDENAÇÃO -->
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0018_Daniel-Goncalves.png" alt="Daniel Gonçalves">
+            </div>
+            <div class="jogador-info">
+                <h3>Daniel Gonçalves</h3>
+                <span class="jogador-posicao">Coordenador do NSP</span>
+                <p class="jogador-vibe">Liderança estratégica integrando ciência, dados e performance de elite.</p>
+                <span class="jogador-numero">NSP</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0061_Pedro-Pontin.png" alt="Dr. Pedro Pontin">
+            </div>
+            <div class="jogador-info">
+                <h3>Dr. Pedro Pontin</h3>
+                <span class="jogador-posicao">Coordenador Médico</span>
+                <p class="jogador-vibe">Responsável técnico pela excelência clínica e saúde do elenco.</p>
+                <span class="jogador-numero">MED</span>
+            </div>
+        </div>
+
+        <!-- CORPO MÉDICO -->
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0006_Gilberto-Cunha.png" alt="Dr. Gilberto Cunha">
+            </div>
+            <div class="jogador-info">
+                <h3>Dr. Gilberto Cunha</h3>
+                <span class="jogador-posicao">Médico</span>
+                <p class="jogador-vibe">Prontidão e dedicação absoluta no cuidado diário com os atletas.</p>
+                <span class="jogador-numero">MED</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0064_Victo-Soraggi.png" alt="Dr. Victor Soraggi">
+            </div>
+            <div class="jogador-info">
+                <h3>Dr. Victor Soraggi</h3>
+                <span class="jogador-posicao">Médico</span>
+                <p class="jogador-vibe">Acompanhamento preventivo para manter os jogadores no auge físico.</p>
+                <span class="jogador-numero">MED</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0011_Andre-Yamada.png" alt="Dr. André Yamada">
+            </div>
+            <div class="jogador-info">
+                <h3>Dr. André Yamada</h3>
+                <span class="jogador-posicao">Médico Radiologista</span>
+                <p class="jogador-vibe">Visão milimétrica em exames de imagem para diagnósticos ultra-precisos.</p>
+                <span class="jogador-numero">RAD</span>
+            </div>
+        </div>
+
+        <!-- PREPARAÇÃO FÍSICA -->
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0060_Marco-Aurelio-Schiavo.png" alt="Marco Aurélio Schiavo">
+            </div>
+            <div class="jogador-info">
+                <h3>Marco Aurélio Schiavo</h3>
+                <span class="jogador-posicao">Preparador Físico</span>
+                <p class="jogador-vibe">Lapidando a potência física para suportar o calendário intenso de 2026.</p>
+                <span class="jogador-numero">PF</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0059_Thiago-Maldonado.png" alt="Thiago Maldonado">
+            </div>
+            <div class="jogador-info">
+                <h3>Thiago Maldonado</h3>
+                <span class="jogador-posicao">Preparador Físico</span>
+                <p class="jogador-vibe">Intensidade nos treinos e condicionamento cardiovascular de alto nível.</p>
+                <span class="jogador-numero">PF</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0063_Angelo-Alves.png" alt="Angelo Alves">
+            </div>
+            <div class="jogador-info">
+                <h3>Angelo Alves</h3>
+                <span class="jogador-posicao">Preparador Físico</span>
+                <p class="jogador-vibe">Construindo força e explosão muscular no dia a dia da Academia.</p>
+                <span class="jogador-numero">PF</span>
+            </div>
+        </div>
+
+        <!-- BIOMECÂNICA E FISIOLOGIA -->
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0058_Jessica-Fernandes.png" alt="Jéssica Fernandes">
+            </div>
+            <div class="jogador-info">
+                <h3>Jéssica Fernandes</h3>
+                <span class="jogador-posicao">Biomecânica</span>
+                <p class="jogador-vibe">Análise de movimentos milimétricos para prevenção drástica de lesões.</p>
+                <span class="jogador-numero">BIO</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0062_Vinicius-Ponzio.png" alt="Vinicius Ponzio">
+            </div>
+            <div class="jogador-info">
+                <h3>Vinicius Ponzio</h3>
+                <span class="jogador-posicao">Fisiologista</span>
+                <p class="jogador-vibe">Mapeamento de desgaste biológico e controle exato de cargas de treino.</p>
+                <span class="jogador-numero">FIS</span>
+            </div>
+        </div>
+
+        <!-- NUTRIÇÃO -->
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0043_Mirtes-Stancanelli.png" alt="Mirtes Stancanelli">
+            </div>
+            <div class="jogador-info">
+                <h3>Mirtes Stancanelli</h3>
+                <span class="jogador-posicao">Nutricionista</span>
+                <p class="jogador-vibe">Desenvolvendo o combustível ideal para alta performance e regeneração muscular.</p>
+                <span class="jogador-numero">NUT</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0021_Elaine.png" alt="Elaine Francelino de Souza">
+            </div>
+            <div class="jogador-info">
+                <h3>Elaine Souza</h3>
+                <span class="jogador-posicao">Técnica em Nutrição</span>
+                <p class="jogador-vibe">Suporte fundamental na execução e equilíbrio da rotina alimentar do clube.</p>
+                <span class="jogador-numero">NUT</span>
+            </div>
+        </div>
+
+        <!-- FISIOTERAPIA -->
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0054_Lucas-Freitas.png" alt="Lucas Freitas">
+            </div>
+            <div class="jogador-info">
+                <h3>Lucas Freitas</h3>
+                <span class="jogador-posicao">Coordenador Fisioterapeuta</span>
+                <p class="jogador-vibe">Comandando os processos de reabilitação com tecnologia de ponta.</p>
+                <span class="jogador-numero">FISO</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0053_Marcelo-Gondo.png" alt="Marcelo Gondo">
+            </div>
+            <div class="jogador-info">
+                <h3>Marcelo Gondo</h3>
+                <span class="jogador-posicao">Fisioterapeuta</span>
+                <p class="jogador-vibe">Foco total no tratamento preventivo e recuperação física dos atletas.</p>
+                <span class="jogador-numero">FISO</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0047_Rodrigo-Alencar.png" alt="Rodrigo Alencar">
+            </div>
+            <div class="jogador-info">
+                <h3>Rodrigo Alencar</h3>
+                <span class="jogador-posicao">Fisioterapeuta</span>
+                <p class="jogador-vibe">Cuidado contínuo e terapias manuais para liberação regenerativa.</p>
+                <span class="jogador-numero">FISO</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0038_Gustavo-Kaschel.png" alt="Gustavo Kaschel">
+            </div>
+            <div class="jogador-info">
+                <h3>Gustavo Kaschel</h3>
+                <span class="jogador-posicao">Fisioterapeuta</span>
+                <p class="jogador-vibe">Aceleração de retorno aos gramados através de fisioterapia avançada.</p>
+                <span class="jogador-numero">FISO</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0036_Bruno-Presotto.png" alt="Bruno Presotto">
+            </div>
+            <div class="jogador-info">
+                <h3>Bruno Presotto</h3>
+                <span class="jogador-posicao">Fisioterapeuta</span>
+                <p class="jogador-vibe">Dedicação diária na transição física dos atletas pós-lesão.</p>
+                <span class="jogador-numero">FISO</span>
+            </div>
+        </div>
+
+        <!-- MASSAGISTAS -->
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0001_Sergio-Luis.png" alt="Sérgio Luís de Oliveira">
+            </div>
+            <div class="jogador-info">
+                <h3>Sérgio Luís</h3>
+                <span class="jogador-posicao">Massagista</span>
+                <p class="jogador-vibe">Alívio de tensões e relaxamento muscular pós-batalhas nos gramados.</p>
+                <span class="jogador-numero">MASS</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0050_Alan-Wagner-Gabriel-Filho.png" alt="Alan Wagner Gabriel Filho">
+            </div>
+            <div class="jogador-info">
+                <h3>Alan Wagner</h3>
+                <span class="jogador-posicao">Massagista</span>
+                <p class="jogador-vibe">Mãos de ouro na recuperação muscular diária do esquadrão alviverde.</p>
+                <span class="jogador-numero">MASS</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0057_FTM_0205.png" alt="Matheus Firmo">
+            </div>
+            <div class="jogador-info">
+                <h3>Matheus Firmo</h3>
+                <span class="jogador-posicao">Massagista</span>
+                <p class="jogador-vibe">Suporte incansável no bem-estar físico e relaxamento pré e pós-treinos.</p>
+                <span class="jogador-numero">MASS</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0052_FTM_0233.png" alt="Edilson Junior">
+            </div>
+            <div class="jogador-info">
+                <h3>Edilson Junior</h3>
+                <span class="jogador-posicao">Massagista</span>
+                <p class="jogador-vibe">Especialista em liberação miofascial para combater a fadiga acumulada.</p>
+                <span class="jogador-numero">MASS</span>
+            </div>
+        </div>
+
+        <!-- ESPECIFICIDADES E SUPORTE AVANÇADO -->
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0030_Vitor-Ugo-Salvoni.png" alt="Vitor Ugo Salvoni">
+            </div>
+            <div class="jogador-info">
+                <h3>Vitor Ugo Salvoni</h3>
+                <span class="jogador-posicao">Dentista</span>
+                <p class="jogador-vibe">Saúde bucal integrada, crucial na prevenção de infecções e lesões musculares.</p>
+                <span class="jogador-numero">ODON</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0004_Jose-Eduardo.png" alt="José Eduardo">
+            </div>
+            <div class="jogador-info">
+                <h3>José Eduardo</h3>
+                <span class="jogador-posicao">Osteopata</span>
+                <p class="jogador-vibe">Alinhamento estrutural e correção postural profunda para performance fluida.</p>
+                <span class="jogador-numero">OST</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0000_Weber-Guimaraes.png" alt="Weber Guimarães">
+            </div>
+            <div class="jogador-info">
+                <h3>Weber Guimarães</h3>
+                <span class="jogador-posicao">Enfermeiro</span>
+                <p class="jogador-vibe">Pronto atendimento e suporte técnico essencial nos bastidores do NSP.</p>
+                <span class="jogador-numero">ENF</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0009_Daniel-Lima.png" alt="Daniel Lima">
+            </div>
+            <div class="jogador-info">
+                <h3>Daniel Lima</h3>
+                <span class="jogador-posicao">Técnico em Enfermagem</span>
+                <p class="jogador-vibe">Assistência rigorosa e cuidados preventivos contínuos com a saúde.</p>
+                <span class="jogador-numero">ENF</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0065_Gisele-Silva.png" alt="Gisele Silva">
+            </div>
+            <div class="jogador-info">
+                <h3>Gisele Silva</h3>
+                <span class="jogador-posicao">Psicóloga</span>
+                <p class="jogador-vibe">Mente blindada: suporte emocional focado em inteligência competitiva.</p>
+                <span class="jogador-numero">PSI</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0002_Luciane.png" alt="Luciane Moscaleski">
+            </div>
+            <div class="jogador-info">
+                <h3>Luciane Moscaleski</h3>
+                <span class="jogador-posicao">Neurocientista</span>
+                <p class="jogador-vibe">Otimização de processos cognitivos, foco e tempo de reação cerebral.</p>
+                <span class="jogador-numero">NEUR</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0041_Rosangela-Rego.png" alt="Rosângela Rêgo">
+            </div>
+            <div class="jogador-info">
+                <h3>Rosângela Rêgo</h3>
+                <span class="jogador-posicao">Podóloga</span>
+                <p class="jogador-vibe">Tratamento minucioso da principal ferramenta de trabalho do jogador de futebol.</p>
+                <span class="jogador-numero">POD</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="saude">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0042_Maria-Carolina.png" alt="Maria Carolina">
+            </div>
+            <div class="jogador-info">
+                <h3>Maria Carolina</h3>
+                <span class="jogador-posicao">Professora de Pilates</span>
+                <p class="jogador-vibe">Estabilização do core, flexibilidade dinâmica e equilíbrio corporal profundo.</p>
+                <span class="jogador-numero">PIL</span>
+            </div>
+        </div>
+
+<!-- ==================== COMISSÃO TÉCNICA ===================== -->
+        <!-- ============================================================ -->
+
+        <div class="jogador-card" data-categoria="comissao">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0012_Abel.png" alt="Abel Ferreira">
+            </div>
+            <div class="jogador-info">
+                <h3>Abel Ferreira</h3>
+                <span class="jogador-posicao">Técnico Comandante</span>
+                <p class="jogador-vibe">Cabeça fria, coração quente. A mente estratégica e brilhante por trás das nossas maiores glórias.</p>
+                <span class="jogador-numero">TEC</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="comissao">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0044_Joao-Martins.png" alt="João Martins">
+            </div>
+            <div class="jogador-info">
+                <h3>João Martins</h3>
+                <span class="jogador-posicao">Auxiliar Técnico</span>
+                <p class="jogador-vibe">O braço direito de Abel. Intenso à beira do gramado e mestre em ajustar o time sob pressão.</p>
+                <span class="jogador-numero">AUX</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="comissao">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0010_Castanheira.png" alt="Vitor Castanheira">
+            </div>
+            <div class="jogador-info">
+                <h3>Vitor Castanheira</h3>
+                <span class="jogador-posicao">Auxiliar Técnico</span>
+                <p class="jogador-vibe">Olhar clínico nos treinamentos, focado no desenvolvimento tático e transições rápidas.</p>
+                <span class="jogador-numero">AUX</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="comissao">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0035_Carlos-Martinho.png" alt="Carlos Martinho">
+            </div>
+            <div class="jogador-info">
+                <h3>Carlos Martinho</h3>
+                <span class="jogador-posicao">Auxiliar Técnico</span>
+                <p class="jogador-vibe">O cientista das jogadas ensaiadas e analista minucioso de posicionamento.</p>
+                <span class="jogador-numero">AUX</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="comissao">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0055_Andrey-Lopes.png" alt="Andrey Lopes">
+            </div>
+            <div class="jogador-info">
+                <h3>Andrey Lopes</h3>
+                <span class="jogador-posicao">Auxiliar Técnico</span>
+                <p class="jogador-vibe">O famoso 'Cebola'. Estrategista da casa que conhece o DNA do clube como ninguém.</p>
+                <span class="jogador-numero">AUX</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="comissao">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0015_Thiago.png" alt="Tiago Costa">
+            </div>
+            <div class="jogador-info">
+                <h3>Tiago Costa</h3>
+                <span class="jogador-posicao">Observador Técnico</span>
+                <p class="jogador-vibe">Análise cirúrgica e espionagem tática de adversários para antecipar cenários de jogo.</p>
+                <span class="jogador-numero">OBS</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="comissao">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0027_Rogerio-Godoy.png" alt="Rogério Godoy">
+            </div>
+            <div class="jogador-info">
+                <h3>Rogério Godoy</h3>
+                <span class="jogador-posicao">Treinador de Goleiros</span>
+                <p class="jogador-vibe">Preparação de elite para manter nossa escola de arqueiros com reflexos absurdos sob as traves.</p>
+                <span class="jogador-numero">PREP</span>
+            </div>
+        </div>
+
+        <div class="jogador-card" data-categoria="comissao">
+            <div class="jogador-foto-placeholder">
+                <img src="https://www.palmeiras.com.br/wp-content/uploads/2026/04/Comissao_2026_0000s_0049_Thales-Damasceno.png" alt="Thales Damasceno">
+            </div>
+            <div class="jogador-info">
+                <h3>Thales Damasceno</h3>
+                <span class="jogador-posicao">Treinador de Goleiros</span>
+                <p class="jogador-vibe">Refinamento técnico rigoroso, trabalhando tempo de reação e a saída de bola com os pés.</p>
+                <span class="jogador-numero">PREP</span>
+            </div>
+        </div>
+
+</div>
+
+</main>
 
     <footer>
         <p>&copy; 2026 Porkitos. Feito por torcedor para torcedor.</p>

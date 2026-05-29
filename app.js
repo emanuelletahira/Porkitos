@@ -57,32 +57,58 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// 3. Sistema de Filtro Interativo do Elenco
+// 3. Sistema de Filtro Avançado (Elenco, Comissão, Saúde)
 document.addEventListener("DOMContentLoaded", function() {
     const botoesFiltro = document.querySelectorAll(".btn-filtro");
     const cardsJogadores = document.querySelectorAll(".jogador-card");
 
+    // Função para aplicar o filtro ativo
+    function aplicarFiltro(alvo) {
+        cardsJogadores.forEach(card => {
+            const categoria = card.getAttribute("data-categoria");
+
+            if (categoria === alvo) {
+                card.style.display = "block";
+                card.style.opacity = "0";
+                setTimeout(() => { card.style.opacity = "1"; }, 30);
+            } else {
+                card.style.display = "none";
+            }
+        });
+    }
+
+    // Executa o filtro inicial baseado no botão ativo original ('elenco')
+    aplicarFiltro("elenco");
+
+    // Gerencia o clique nos botões
     botoesFiltro.forEach(botao => {
         botao.addEventListener("click", function() {
-            // Remove a classe 'ativo' de todos os botões e coloca no clicado
             botoesFiltro.forEach(b => b.classList.remove("ativo"));
             this.classList.add("ativo");
 
             const alvo = this.getAttribute("data-alvo");
-
-            cardsJogadores.forEach(card => {
-                const categoria = card.getAttribute("data-categoria");
-
-                // Se for 'todos' ou bater com a categoria, exibe. Se não, esconde.
-                if (alvo === "todos" || categoria === alvo) {
-                    card.style.display = "block";
-                    // Pequeno truque de animação de entrada
-                    card.style.opacity = "0";
-                    setTimeout(() => { card.style.opacity = "1"; }, 50);
-                } else {
-                    card.style.display = "none";
-                }
-            });
+            aplicarFiltro(alvo);
         });
     });
+});
+
+// Função para filtrar os troféus da sala de conquistas
+// Sistema de Expansão da História de 1951
+document.addEventListener("DOMContentLoaded", function() {
+    const btnMundial = document.getElementById("btn-mundial");
+    const blocoHistoria = document.getElementById("historia-51");
+
+    if (btnMundial && blocoHistoria) {
+        btnMundial.addEventListener("click", function() {
+            blocoHistoria.classList.toggle("aberto");
+            
+            // Altera o texto da dica para melhorar a experiência
+            const instrucao = btnMundial.querySelector(".clique-instrucao");
+            if (blocoHistoria.classList.contains("aberto")) {
+                instrucao.textContent = "✨ Clique para fechar a história";
+            } else {
+                instrucao.textContent = "✨ Clique para abrir a história da Copa Rio";
+            }
+        });
+    }
 });
