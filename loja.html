@@ -1,53 +1,410 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja do Porkito - Porkitos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Porkitos Store</title>
+
+  <!-- FONTE -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    <header>
-        <div class="logo-container">
-            <a href="index.html"><img src="assets/logo.png" alt="Logo Porkitos"></a>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo-container">
+
+      <a href="index.html">
+        <img src="assets/logo.png" alt="Logo Porkitos">
+      </a>
+
+    </div>
+
+    <nav>
+
+      <ul>
+
+        <li>
+          <a href="historia.html">
+            História
+          </a>
+        </li>
+
+        <li>
+          <a href="jogadores.html">
+            Elenco 2026
+          </a>
+        </li>
+
+        <li>
+          <a href="conquistas.html">
+            Conquistas
+          </a>
+        </li>
+
+        <li>
+          <a href="loja.html">
+            Loja
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+    <div class="header-actions">
+        
+        <div id="userSection" class="user-section">
+            <button id="loginBtn" class="btn-login">👤 Entrar</button>
+            <div id="userInfo" class="user-info" style="display: none;">
+                <span id="userNameDisplay"></span>
+                <button id="logoutBtn" class="btn-logout">Sair</button>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="historia.html">História</a></li>
-                <li><a href="jogadores.html">Elenco 2026</a></li>
-                <li><a href="conquistas.html">Conquistas</a></li>
-                <li><a href="loja.html">Minha Loja</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <h2>Loja Oficial do Porkito</h2>
-        <p class="subtitulo">Fortaleça o nosso projeto independente e ande trajado com estilo!</p>
-
-        <div class="grid-container">
-            <div class="card">
-                <h3>Camiseta Porkitos Exclusiva</h3>
-                <p class="preco">R$ 89,90</p>
-                <a href="#" class="btn" style="margin-top: 0; width: 100%;">Comprar Agora</a>
-            </div>
-            <div class="card">
-                <h3>Boné Alviverde Porkitos</h3>
-                <p class="preco">R$ 49,90</p>
-                <a href="#" class="btn" style="margin-top: 0; width: 100%;">Comprar Agora</a>
-            </div>
-            <div class="card">
-                <h3>Caneca "Era Abel Ferreira"</h3>
-                <p class="preco">R$ 35,00</p>
-                <a href="#" class="btn" style="margin-top: 0; width: 100%;">Comprar Agora</a>
-            </div>
+        <div class="cart-nav-container">
+            <button id="cartButton" class="cart-btn-nav">
+                🛒 Carrinho
+            </button>
         </div>
-    </main>
 
-    <footer>
-        <p>&copy; 2026 Porkitos. Feito por torcedor para torcedor.</p>
-    </footer>
-    <script src="script.js"></script>
+    </div>
+
+  </header>
+
+ <main>
+
+    <section class="grid-container">
+
+    <!-- CAMISETA 1 -->
+    <div class="card" data-modelo="modelo1">
+
+        <div class="card-image">
+            <img src="camisetas/modelo1-preta.png" alt="Camiseta Modelo 1">
+        </div>
+
+        <h3>Edição 1914</h3>
+
+        <p class="card-description">
+            Modelo tradicional Porkitos.
+        </p>
+
+        <div class="preco">R$ 79,90</div>
+
+        <div class="card-actions">
+            <button class="btn-view">Ver Produto</button>
+            <button class="btn-quick-add">+</button>
+        </div>
+
+    </div>
+
+    <!-- CAMISETA 2 -->
+    <div class="card" data-modelo="modelo2">
+
+        <div class="card-image">
+            <img src="camisetas/modelo2-preta.png" alt="Camiseta Modelo 2">
+        </div>
+
+        <h3>Porco de Ouro</h3>
+
+        <p class="card-description">
+            Modelo retrô Porkitos.
+        </p>
+
+        <div class="preco">R$ 79,90</div>
+
+        <div class="card-actions">
+            <button class="btn-view">Ver Produto</button>
+            <button class="btn-quick-add">+</button>
+        </div>
+
+    </div>
+
+    <!-- CAMISETA 3 -->
+    <div class="card" data-modelo="modelo3">
+
+        <div class="card-image">
+            <img src="camisetas/modelo3-preta.png" alt="Camiseta Modelo 3">
+        </div>
+
+        <h3>Edição Especial</h3>
+
+        <p class="card-description">
+            Modelo especial Porkitos.
+        </p>
+
+        <div class="preco">R$ 79,90</div>
+
+        <div class="card-actions">
+            <button class="btn-view">Ver Produto</button>
+            <button class="btn-quick-add">+</button>
+        </div>
+
+    </div>
+
+    <!-- CAMISETA 4 -->
+    
+    <div class="card" data-modelo="modelo4">
+
+        <div class="card-image">
+            <img src="camisetas/modelo4-preta.png" alt="Camiseta Modelo 4">
+        </div>
+
+        <h3>Porkitos Clássica</h3>
+
+        <p class="card-description">
+            Modelo edição especial Porkitos.
+        </p>
+
+        <div class="preco">R$ 79,90</div>
+
+        <div class="card-actions">
+            <button class="btn-view">Ver Produto</button>
+            <button class="btn-quick-add">+</button>
+        </div>
+
+    </div>
+
+    <!-- BONÉ -->
+    <div class="card">
+
+        <div class="card-image">
+            <img src="assets/bone.png" alt="Boné Porkitos">
+        </div>
+
+        <h3>Boné Porkitos</h3>
+
+        <p class="card-description">
+            Boné oficial da torcida.
+        </p>
+
+        <div class="preco">R$ 49,90</div>
+
+        <div class="card-actions">
+            <button class="btn-view">Ver Produto</button>
+            <button class="btn-quick-add">+</button>
+        </div>
+
+    </div>
+
+    <!-- CANECA -->
+    <div class="card">
+
+        <div class="card-image">
+            <img src="assets/caneca.png" alt="Caneca Porkitos">
+        </div>
+
+        <h3>Caneca Porkitos</h3>
+
+        <p class="card-description">
+            Caneca personalizada da torcida.
+        </p>
+
+        <div class="preco">R$ 29,90</div>
+
+        <div class="card-actions">
+            <button class="btn-view">Ver Produto</button>
+            <button class="btn-quick-add">+</button>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- MODAL PRODUTO -->
+
+<div class="modal" id="productModal">
+
+    <div class="modal-content">
+
+        <button class="close-modal" id="closeModal">
+            &times;
+        </button>
+
+        <div class="modal-body">
+
+            <div class="modal-images">
+
+                <div class="main-image">
+                    <img id="modalImage" src="camisetas/modelo1-preta.png">
+                </div>
+
+            </div>
+
+            <div class="modal-info">
+
+            <h2 id="modalTitle"> Camiseta Porkitos</h2>
+
+            <p id="modeloSelecionado" style="
+            color: var(--verde-claro);
+            font-weight: bold;
+            margin-bottom: 10px;">
+            Modelo 1
+            </p>
+
+                <div class="price-section">
+
+                    <span class="price" id="modalPrice">
+                        R$ 79,90
+                    </span>
+
+                </div>
+
+                <p class="product-description" id="modalDescription">
+                    Produto oficial da torcida Porkitos.
+                </p>
+
+                <div class="variation-group">
+
+    <label>Cor:</label>
+
+    <div class="color-options">
+
+        <button class="color-option selected" data-color="preta">
+            Preta
+        </button>
+
+        <button class="color-option" data-color="branca">
+            Branca
+        </button>
+
+        <button class="color-option" data-color="verde">
+            Verde
+        </button>
+
+        <button class="color-option" data-color="cinza">
+            Cinza
+        </button>
+
+    </div>
+
+</div>
+
+                <!-- TAMANHO -->
+
+                <div class="variation-group">
+
+                    <label>Tamanho:</label>
+
+                    <div class="size-options">
+
+                        <button class="size-option">P</button>
+                        <button class="size-option selected">M</button>
+                        <button class="size-option">G</button>
+                        <button class="size-option">GG</button>
+
+                    </div>
+
+                </div>
+
+                <div class="action-buttons">
+
+                    <button class="btn-add-cart">
+                        Adicionar ao Carrinho
+                    </button>
+
+                    <button class="btn-buy-now">
+                        Comprar Agora
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL DE LOGIN -->
+<div class="modal" id="loginModal">
+    <div class="modal-content login-content">
+        <button class="close-modal" id="closeLoginModal">&times;</button>
+        <div class="login-header">
+            <h2>Acesse sua conta</h2>
+            <p>Faça login para prosseguir com sua compra</p>
+        </div>
+        <form id="loginForm" class="login-form">
+            <div class="input-group">
+                <label for="loginName">Seu Nome</label>
+                <input type="text" id="loginName" placeholder="Como quer ser chamado?" required>
+            </div>
+            <div class="input-group">
+                <label for="loginEmail">E-mail</label>
+                <input type="email" id="loginEmail" placeholder="seu@email.com" required>
+            </div>
+            <button type="submit" class="btn-submit-login">Entrar no Time</button>
+        </form>
+    </div>
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- CARRINHO -->
+<div class="cart-sidebar" id="cartSidebar">
+
+    <div class="cart-header">
+        <h3>🛒 Carrinho</h3>
+
+        <button class="close-cart" id="closeCart">
+            ×
+        </button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+
+        <div class="cart-empty">
+            Seu carrinho está vazio.
+        </div>
+
+    </div>
+
+    <div class="cart-footer">
+
+        <div class="cart-total">
+            <span>Total:</span>
+            <span id="cartTotal">R$ 0,00</span>
+        </div>
+
+        <button class="btn-checkout">
+            Finalizar Compra
+        </button>
+
+    </div>
+
+</div>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      &copy; 2026 Porkitos.
+      Feito por torcedor para torcedor.
+    </p>
+
+  </footer>
+
+  <!-- JS -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+
 </body>
+
 </html>
