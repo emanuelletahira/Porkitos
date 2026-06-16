@@ -2064,3 +2064,213 @@ footer {
 .btn-submit-login:hover {
     background-color: var(--verde-claro);
 }
+
+/* ============================================================
+   AVALIAÇÕES - Adicionar no FINAL do seu style.css existente
+   ============================================================ */
+
+/* Variáveis específicas da página de avaliações */
+:root {
+  --av-card-bg:   #111d11;
+  --av-borda:     #1e351e;
+  --av-verde:     #2dbe2d;
+  --av-texto:     #d8f0d8;
+  --av-subtexto:  #6a9a6a;
+  --av-estrela:   #f5c518;
+}
+
+/* ── RESUMO ── */
+.av-resumo {
+  background: var(--av-card-bg);
+  border: 1px solid var(--av-borda);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.av-resumo-nota { text-align: center; flex-shrink: 0; }
+
+.av-numero {
+  font-size: 72px;
+  line-height: 1;
+  font-weight: 900;
+  color: var(--av-estrela);
+}
+
+.av-estrelas-display {
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin: 4px 0;
+  color: var(--av-estrela);
+}
+
+.av-total { font-size: 12px; color: var(--av-subtexto); }
+
+.av-barras { flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 7px; }
+
+.av-barra-linha { display: flex; align-items: center; gap: 10px; font-size: 12px; }
+
+.av-label { color: var(--av-subtexto); width: 14px; text-align: right; flex-shrink: 0; }
+
+.av-barra-track {
+  flex: 1; height: 7px;
+  background: #1e351e; border-radius: 4px; overflow: hidden;
+}
+
+.av-barra-fill {
+  height: 100%; background: var(--av-estrela); border-radius: 4px;
+  width: 0%; transition: width .8s cubic-bezier(.4,0,.2,1);
+}
+
+.av-count { color: var(--av-subtexto); width: 20px; flex-shrink: 0; font-size: 11px; }
+
+/* ── FORMULÁRIO ── */
+.av-form-titulo {
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-bottom: 16px;
+  border-left: 3px solid var(--av-verde);
+  padding-left: 12px;
+  text-transform: uppercase;
+}
+
+.av-form-card {
+  background: var(--av-card-bg);
+  border: 1px solid var(--av-borda);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+/* estrelas picker */
+.av-star-picker { display: flex; gap: 8px; }
+.av-star-picker button {
+  background: none; border: none; cursor: pointer;
+  font-size: 32px; line-height: 1;
+  color: #2a4a2a;
+  transition: color .15s, transform .15s;
+}
+.av-star-picker button.ativo { color: var(--av-estrela); }
+.av-star-picker button:hover { transform: scale(1.15); }
+
+.av-label-campo {
+  font-size: 12px;
+  color: var(--av-subtexto);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.av-input,
+.av-textarea {
+  width: 100%;
+  background: #0d160d;
+  border: 1px solid var(--av-borda);
+  border-radius: 10px;
+  color: var(--av-texto);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  padding: 11px 14px;
+  outline: none;
+  transition: border-color .2s;
+}
+.av-input:focus, .av-textarea:focus { border-color: var(--av-verde); }
+.av-input::placeholder, .av-textarea::placeholder { color: #3a5a3a; }
+.av-textarea { resize: vertical; min-height: 88px; }
+
+.av-btn-enviar {
+  background: linear-gradient(135deg, #1a7a1a, var(--av-verde));
+  border: none; border-radius: 10px;
+  color: #fff; font-family: 'Montserrat', sans-serif;
+  font-size: 14px; font-weight: 700;
+  padding: 12px 24px;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: opacity .2s, transform .15s;
+  min-width: 160px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.av-btn-enviar:hover { opacity: .9; transform: translateY(-1px); }
+.av-btn-enviar:disabled { opacity: .45; cursor: default; transform: none; }
+
+.msg-feedback {
+  font-size: 13px; padding: 10px 14px; border-radius: 8px;
+  display: none;
+}
+.msg-feedback.ok  { background: #0d2d0d; color: #6adf6a; border: 1px solid #1e4a1e; display: block; }
+.msg-feedback.err { background: #2d0d0d; color: #df6a6a; border: 1px solid #4a1e1e; display: block; }
+
+/* ── LISTA ── */
+.av-lista-titulo {
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-bottom: 16px;
+  border-left: 3px solid var(--av-verde);
+  padding-left: 12px;
+  text-transform: uppercase;
+}
+
+.av-lista { display: flex; flex-direction: column; gap: 12px; }
+
+.av-card {
+  background: var(--av-card-bg);
+  border: 1px solid var(--av-borda);
+  border-radius: 14px;
+  padding: 18px 20px;
+  animation: avFadeIn .4s ease;
+}
+@keyframes avFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+.av-topo {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 10px; flex-wrap: wrap;
+}
+
+.av-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, #1a7a1a, var(--av-verde));
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: 18px; color: #fff;
+  flex-shrink: 0;
+}
+
+.av-info { flex: 1; }
+.av-nome { font-weight: 700; font-size: 14px; color: #fff; }
+.av-data { font-size: 11px; color: var(--av-subtexto); margin-top: 1px; }
+.av-estrelas { font-size: 16px; letter-spacing: 1px; color: var(--av-estrela); flex-shrink: 0; }
+.av-comentario { font-size: 13.5px; color: var(--av-texto); line-height: 1.6; }
+
+.av-vazio {
+  text-align: center; padding: 40px 20px;
+  color: var(--av-subtexto); font-size: 14px;
+  background: var(--av-card-bg);
+  border: 1px dashed var(--av-borda);
+  border-radius: 14px;
+}
+
+/* loading dots */
+.av-loading { display: flex; gap: 6px; justify-content: center; padding: 32px; }
+.av-loading span {
+  width: 8px; height: 8px; background: var(--av-verde); border-radius: 50%;
+  animation: avPulse .9s infinite;
+}
+.av-loading span:nth-child(2) { animation-delay: .15s; }
+.av-loading span:nth-child(3) { animation-delay: .30s; }
+@keyframes avPulse { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-7px)} }
+
+/* responsivo */
+@media (max-width: 560px) {
+  .av-resumo { gap: 20px; }
+  .av-numero { font-size: 56px; }
+  .av-form-card { padding: 18px; }
+  .av-btn-enviar { align-self: stretch; text-align: center; }
+}

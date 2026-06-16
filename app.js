@@ -353,3 +353,153 @@ document.querySelectorAll(".size-option").forEach(botao => {
 
 });
 });
+
+// ============================================================
+// AVALIAÇÕES - Adicionar no FINAL do seu script.js existente
+// ============================================================
+
+const SUPABASE_URL_AV = 'https://ctmhvhwsqxdxffbhynzv.supabase.co';
+const SUPABASE_KEY_AV = 'sb_publishable_boFyP6YzdRChyyshADtfew_TJk7y8Z7';
+const HEADERS_AV = {
+  'Content-Type': 'application/json',
+  'apikey': SUPABASE_KEY_AV,
+  'Authorization': 'Bearer ' + SUPABASE_KEY_AV
+};
+
+// Só roda se estiver na página de avaliações
+if (document.getElementById('star-picker')) {
+
+  let estrelaSelecionada = 0;
+  const botoesEstrela = document.querySelectorAll('#star-picker button');
+
+  botoesEstrela.forEach(btn => {
+    btn.addEventListener('mouseenter', () => iluminarEstrelas(+btn.dataset.val));
+    btn.addEventListener('mouseleave', () => iluminarEstrelas(estrelaSelecionada));
+    btn.addEventListener('click', () => {
+      estrelaSelecionada = +btn.dataset.val;
+      iluminarEstrelas(estrelaSelecionada);
+    });
+  });
+
+  function iluminarEstrelas(n) {
+    botoesEstrela.forEach(b => b.classList.toggle('ativo', +b.dataset.val <= n));
+  }
+
+  document.getElementById('btn-enviar').addEventListener('click', async () => {
+    const nome       = document.getElementById('inp-nome').value.trim();
+    const comentario = document.getElementById('inp-comentario').value.trim();
+    const btn        = document.getElementById('btn-enviar');
+
+    if (!estrelaSelecionada) { mostrarMsgAv('Escolha uma nota antes de enviar.', 'err'); return; }
+    if (!nome)               { mostrarMsgAv('Coloque seu nome para enviar.', 'err'); return; }
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    try {
+      const resp = await fetch(SUPABASE_URL_AV + '/rest/v1/avaliacoes', {
+        method: 'POST',
+        headers: { ...HEADERS_AV, 'Prefer': 'return=minimal' },
+        body: JSON.stringify({ nome, estrelas: estrelaSelecionada, comentario: comentario || null })
+      });
+
+      if (!resp.ok) throw new Error('Erro ' + resp.status);
+
+      mostrarMsgAv('Avaliacao enviada! Obrigado, torcedor.', 'ok');
+      document.getElementById('inp-nome').value = '';
+      document.getElementById('inp-comentario').value = '';
+      estrelaSelecionada = 0;
+      iluminarEstrelas(0);
+      await carregarAvaliacoes();
+
+    } catch (e) {
+      mostrarMsgAv('Nao foi possivel enviar. Tenta novamente.', 'err');
+      console.error(e);
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Enviar avaliacao';
+  });
+
+  function mostrarMsgAv(texto, tipo) {
+    const el = document.getElementById('msg-feedback');
+    el.textContent = texto;
+    el.className = 'msg-feedback ' + tipo;
+  }
+
+  async function carregarAvaliacoes() {
+    const lista = document.getElementById('lista');
+    try {
+      const resp = await fetch(
+        SUPABASE_URL_AV + '/rest/v1/avaliacoes?select=*&order=criado_em.desc',
+        { headers: HEADERS_AV }
+      );
+      const dados = await resp.json();
+      atualizarResumoAv(dados);
+      renderizarListaAv(lista, dados);
+    } catch (e) {
+      lista.innerHTML = '<div class="av-vazio">Nao foi possivel carregar as avaliacoes.</div>';
+      console.error(e);
+    }
+  }
+
+  function atualizarResumoAv(dados) {
+    const total = dados.length;
+    const media = total ? (dados.reduce((s, d) => s + d.estrelas, 0) / total) : 0;
+
+    document.getElementById('media-numero').textContent = total ? media.toFixed(1) : '--';
+    document.getElementById('media-total').textContent  = total
+      ? total + (total === 1 ? ' avaliacao' : ' avaliacoes')
+      : 'Nenhuma avaliacao ainda';
+
+    const cheias = Math.round(media);
+    document.getElementById('media-estrelas').textContent =
+      '★'.repeat(cheias) + '☆'.repeat(5 - cheias);
+
+    const contagem = [5,4,3,2,1].map(n => ({
+      nota: n, qtd: dados.filter(d => d.estrelas === n).length
+    }));
+
+    document.getElementById('barras').innerHTML = contagem.map(({ nota, qtd }) => {
+      const pct = total ? Math.round((qtd / total) * 100) : 0;
+      return `<div class="av-barra-linha">
+        <span class="av-label">${nota}</span>
+        <div class="av-barra-track"><div class="av-barra-fill" style="width:${pct}%"></div></div>
+        <span class="av-count">${qtd}</span>
+      </div>`;
+    }).join('');
+  }
+
+  function renderizarListaAv(container, dados) {
+    if (!dados.length) {
+      container.innerHTML = '<div class="av-vazio">Nenhuma avaliacao ainda. Seja o primeiro!</div>';
+      return;
+    }
+    container.innerHTML = dados.map(d => {
+      const inicial  = d.nome.charAt(0).toUpperCase();
+      const estrelas = '★'.repeat(d.estrelas) + '☆'.repeat(5 - d.estrelas);
+      const data     = new Date(d.criado_em).toLocaleDateString('pt-BR', {
+        day: '2-digit', month: 'short', year: 'numeric'
+      });
+      const comentario = d.comentario
+        ? `<p class="av-comentario">${escHtmlAv(d.comentario)}</p>` : '';
+      return `<div class="av-card">
+        <div class="av-topo">
+          <div class="av-avatar">${inicial}</div>
+          <div class="av-info">
+            <div class="av-nome">${escHtmlAv(d.nome)}</div>
+            <div class="av-data">${data}</div>
+          </div>
+          <div class="av-estrelas">${estrelas}</div>
+        </div>
+        ${comentario}
+      </div>`;
+    }).join('');
+  }
+
+  function escHtmlAv(str) {
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  carregarAvaliacoes();
+}

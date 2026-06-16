@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avaliações – Porkitos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER IGUAL AO RESTO DO SITE -->
+  <header>
+    <div class="logo-container">
+      <a href="index.html"><img src="assets/logo.png" alt="Logo Porkitos"></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="historia.html">História</a></li>
+        <li><a href="jogadores.html">Elenco 2026</a></li>
+        <li><a href="conquistas.html">Conquistas</a></li>
+        <li><a href="loja.html">Loja</a></li>
+        <li><a href="avaliacoes.html">Avaliações</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Avaliações</h1>
+    <p class="subtitulo">O que os torcedores estão achando do site</p>
+
+    <!-- RESUMO GERAL -->
+    <div class="av-resumo">
+      <div class="av-resumo-nota">
+        <div class="av-numero" id="media-numero">--</div>
+        <div class="av-estrelas-display" id="media-estrelas">☆☆☆☆☆</div>
+        <div class="av-total" id="media-total">carregando...</div>
+      </div>
+      <div class="av-barras" id="barras"></div>
+    </div>
+
+    <!-- FORMULÁRIO -->
+    <p class="av-form-titulo">Deixe sua avaliação</p>
+    <div class="av-form-card">
+
+      <div>
+        <label class="av-label-campo">Sua nota</label>
+        <div class="av-star-picker" id="star-picker">
+          <button type="button" data-val="1">★</button>
+          <button type="button" data-val="2">★</button>
+          <button type="button" data-val="3">★</button>
+          <button type="button" data-val="4">★</button>
+          <button type="button" data-val="5">★</button>
+        </div>
+      </div>
+
+      <div>
+        <label class="av-label-campo" for="inp-nome">Seu nome</label>
+        <input class="av-input" type="text" id="inp-nome" placeholder="Como quer ser chamado?" maxlength="60">
+      </div>
+
+      <div>
+        <label class="av-label-campo" for="inp-comentario">Comentário (opcional)</label>
+        <textarea class="av-textarea" id="inp-comentario" placeholder="O que você achou do site?"></textarea>
+      </div>
+
+      <div id="msg-feedback" class="msg-feedback"></div>
+
+      <button class="av-btn-enviar" id="btn-enviar">Enviar avaliação</button>
+    </div>
+
+    <!-- LISTA -->
+    <p class="av-lista-titulo">Avaliações dos torcedores</p>
+    <div class="av-lista" id="lista">
+      <div class="av-loading"><span></span><span></span><span></span></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Porkitos. Feito por torcedor para torcedor.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
