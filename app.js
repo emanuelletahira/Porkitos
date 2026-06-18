@@ -119,9 +119,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // 5. SISTEMA DE LOGIN
-
-const SUPABASE_URL = 'https://gzptrkipxlwaubpxufqh.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_wxOruwzbq-rKKR3_skDKAw_YZ_x7drF';
 const loginModal = document.getElementById("loginModal");
 const closeLoginModal = document.getElementById("closeLoginModal");
 const loginForm = document.getElementById("loginForm");
@@ -155,44 +152,6 @@ function fecharTudo() {
     document.body.style.overflow = "auto";
 }
 
-if (loginBtn) {
-    loginBtn.addEventListener("click", () => {
-        loginModal.classList.add("active");
-        overlay.classList.add("active");
-    });
-}
-
-// CORREÇÃO CRÍTICA: Impedir que cliques dentro do modal fechem ele
-const loginContent = document.querySelector(".login-content");
-if (loginContent) {
-    loginContent.addEventListener("click", (e) => {
-        e.stopPropagation(); // Impede o clique de chegar no overlay/modal pai
-    });
-}
-
-if (closeLoginModal) closeLoginModal.addEventListener("click", fecharTudo);
-if (overlay) overlay.addEventListener("click", fecharTudo);
-
-if (loginForm) {
-    loginForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const nome = document.getElementById("loginName").value;
-        const email = document.getElementById("loginEmail").value;
-        localStorage.setItem("porkitos_user", JSON.stringify({ nome, email }));
-        alert(`Seja bem vindo(a) ${nome}, que bom saber que faz parte do time agora!`);
-        fecharTudo();
-        verificarLogin();
-    });
-}
-
-if (logoutBtn) {
-    logoutBtn.addEventListener("click", () => {
-        localStorage.removeItem("porkitos_user");
-        verificarLogin();
-    });
-}
-
-document.addEventListener("DOMContentLoaded", verificarLogin);
 
 // 6. LOJA E CARRINHO
 let produtoAtual = "modelo1";
@@ -503,3 +462,99 @@ if (document.getElementById('star-picker')) {
 
   carregarAvaliacoes();
 }
+
+// Função para abrir e fechar a janelinha
+    function alternarChat() {
+        const chat = document.getElementById("porkitos-chat-container");
+        if (chat.style.display === "none" || chat.style.display === "") {
+            chat.style.display = "flex";
+        } else {
+            chat.style.display = "none";
+        }
+    }
+
+    function verificarTecla(event) {
+        if (event.key === "Enter") {
+            fazerPergunta();
+        }
+    }
+
+    function fazerPergunta() {
+        const input = document.getElementById("campoPergunta");
+        const pergunta = input.value.trim();
+        
+        if (!pergunta) return;
+
+        const historico = document.getElementById("historico");
+        historico.innerHTML += `<div class="mensagem usuario">${pergunta}</div>`;
+        input.value = "";
+        historico.scrollTop = historico.scrollHeight;
+
+        const avatar = document.getElementById("avatarPersonagem");
+        const status = document.getElementById("statusTexto");
+        
+        avatar.style.backgroundImage = "url('bonequinhopensando.png')"; 
+        avatar.classList.add("pensando-animacao");
+        status.innerText = "🤔 Pensando...";
+        status.style.color = "#d4af37";
+
+        // Banco de dados simulado da sua loja Porkitos
+        const produtosPorkitos = JSON.parse(localStorage.getItem("produtosPorkitos")) || [
+            { nome: "Camisa Oficial Porkitos 2026", preco: 299 },
+            { nome: "Moletom Alviverde Porco", preco: 349 },
+            { nome: "Boné Palestra Itália", preco: 89 },
+            { nome: "Caneca Mágica Allianz Parque", preco: 49 }
+        ];
+
+        const textoFiltro = pergunta.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        let respostaIA = "";
+
+        if (textoFiltro.includes("caro") || textoFiltro.includes("maior valor") || textoFiltro.includes("maior preco")) {
+            let maisCaro = produtosPorkitos.reduce((max, p) => p.preco > max.preco ? p : max, produtosPorkitos[0]);
+            respostaIA = `O item mais premium da nossa loja atualmente é o **${maisCaro.nome}**, saindo por R$ ${maisCaro.preco},00. Um manto sagrado! 🏆`;
+        }
+        else if (textoFiltro.includes("barato") || textoFiltro.includes("menor valor") || textoFiltro.includes("menor preco") || textoFiltro.includes("em conta")) {
+            let maisBarato = produtosPorkitos.reduce((min, p) => p.preco < min.preco ? p : min, produtosPorkitos[0]);
+            respostaIA = `O item mais em conta na nossa loja hoje é a **${maisBarato.nome}**, por apenas R$ ${maisBarato.preco},00! Dá pra garantir sem apertar o bolso. 🟩`;
+        }
+        else if (textoFiltro.includes("tem") || textoFiltro.includes("vende") || textoFiltro.includes("busca") || textoFiltro.includes("camisa") || textoFiltro.includes("moletom") || textoFiltro.includes("bone") || textoFiltro.includes("caneca")) {
+            let achouProduto = null;
+            for (let p of produtosPorkitos) {
+                let nomeTratado = p.nome.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                if (textoFiltro.includes(nomeTratado) || nomeTratado.includes(textoFiltro)) {
+                    achouProduto = p;
+                    break; 
+                }
+            }
+            if (achouProduto) {
+                respostaIA = `Com certeza, a Família Palmeiras merece! Nós temos o/a **${achouProduto.nome}** por R$ ${achouProduto.preco},00. Você pode garantir ela direto na nossa aba Loja! 🛍️`;
+            } else {
+                respostaIA = "Dá uma olhada geral na nossa aba 'Loja' no menu superior! Se não achar esse modelo específico, fique de olho porque o estoque atualiza direto! 🐷";
+            }
+        }
+        else if (textoFiltro.includes("elenco") || textoFiltro.includes("jogador") || textoFiltro.includes("time") || textoFiltro.includes("escalacao")) {
+            respostaIA = "O nosso **Esquadrão de 2026** está fortíssimo! Para ver a ficha técnica de todos os nossos guerreiros, clique na seção **Elenco 2026** no menu superior do site! 🏃‍♂️💨";
+        }
+        else if (textoFiltro.includes("titulo") || textoFiltro.includes("conquistas") || textoFiltro.includes("campeao") || textoFiltro.includes("libertadores")) {
+            respostaIA = "Somos o Maior Campeão do Brasil! 🏆 Na nossa página de **Conquistas**, você pode relembrar nossa trajetória histórica cheia de taças pesadas. Vai lá conferir!";
+        }
+        else if (textoFiltro.includes("historia") || textoFiltro.includes("palestra") || textoFiltro.includes("fundacao")) {
+            respostaIA = "Nossa história nasceu em 1914 como Palestra Itália e virou Palmeiras na Arrancada Heróica! 🟢 Você encontra tudo detalhado na aba **História** do menu.";
+        }
+        else if (textoFiltro.includes("oi") || textoFiltro.includes("ola") || textoFiltro.includes("bom dia") || textoFiltro.includes("boa tarde")) {
+            respostaIA = "Salve, palmeirense! Tudo tranquilo? Sou o Porquito. Como posso te ajudar a navegar pelo nosso portal alviverde hoje? 🐷💚";
+        } 
+        else {
+            respostaIA = "Baita pergunta! Como assistente virtual do Porkitos, posso te ajudar a ver os produtos da Loja (e quais estão mais baratos), ou te dar infos sobre o nosso Elenco 2026 e Conquistas! 🟩";
+        }
+
+        setTimeout(() => {
+            historico.innerHTML += `<div class="mensagem atendente">${respostaIA}</div>`;
+            historico.scrollTop = historico.scrollHeight;
+
+            avatar.style.backgroundImage = "url('personagem.png')";
+            avatar.classList.remove("pensando-animacao");
+            status.innerText = "🟢 Online";
+            status.style.color = "#006437";
+        }, 1200); 
+    }

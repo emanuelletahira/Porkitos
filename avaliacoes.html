@@ -76,6 +76,45 @@
     </div>
   </main>
 
+  <!-- PORKBOT -->
+<!-- Widget do Chatbot Porkitos -->
+<div id="porkitos-wrapper">
+    
+    <!-- Botão Flutuante (O que o usuário vê primeiro) -->
+    <button id="porkitos-btn-janela" onclick="alternarChat()">
+    <img src="boneco.png" alt="Porquito Chat">
+</button>
+
+
+    <!-- Container do Chat (O design que você gostou, agora como popup) -->
+    <div id="porkitos-chat-container" class="chat-container-widget">
+        
+        <!-- ÁREA DO AVATAR -->
+        <div class="avatar-area-widget">
+            <div id="avatarPersonagem" class="avatar-box-widget"></div>
+            <p id="statusTexto" class="avatar-status-widget">🟢 Online</p>
+        </div>
+
+        <!-- ÁREA DA CONVERSA -->
+        <div class="conversa-area-widget">
+            <!-- Topo com botão de fechar -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span style="font-weight: bold; color: #006437; font-size: 14px;">Porquito Assistente</span>
+                <button onclick="alternarChat()" style="background: none; border: none; color: #888; cursor: pointer; font-size: 16px; font-weight: bold;">✕</button>
+            </div>
+
+            <div id="historico" class="historico-mensagens-widget">
+                <div class="mensagem atendente">Salve, Torcedor Alviverde! 🐷 Seja bem-vindo ao Porkitos. Sou o Porquito! Posso te ajudar a encontrar mantos na Loja, falar do Elenco 2026 ou recordar nossas Conquistas. O que manda? 🟩</div>
+            </div>
+            
+            <div class="input-box-widget">
+                <input id="campoPergunta" type="text" placeholder="Pergunte sobre mantos, elenco ou títulos..." onkeypress="verificarTecla(event)">
+                <button onclick="fazerPergunta()">Enviar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
   <footer>
     <p>&copy; 2026 Porkitos. Feito por torcedor para torcedor.</p>
   </footer>

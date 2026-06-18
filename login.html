@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Meu Site</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== VARIÁVEIS E RESET ===== */
+        :root {
+            --primary-color: #128216;
+            --primary-dark: #042816;
+            --secondary-color: #1c5739;
+            --success-color: #006040;
+            --error-color: #ef4444;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --border-color: #e5e7eb;
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .auth-container {
+            position: relative;
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .auth-container::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -100px;
+            left: -100px;
+            animation: float 6s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+
+        .auth-box {
+            background: var(--bg-primary);
+            border-radius: 16px;
+            box-shadow: var(--shadow-xl);
+            padding: 40px;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+            pointer-events: none;
+        }
+
+        .auth-box.active {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .auth-header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .auth-header p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .form-group input {
+            padding: 12px 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 14px;
+            transition: var(--transition);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .form-group input::placeholder {
+            color: #9ca3af;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            width: 100%;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .form-message {
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        .form-message.show {
+            display: block;
+        }
+
+        .form-message.success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+
+        .form-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .auth-footer p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .auth-footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .auth-footer a:hover {
+            color: var(--primary-dark);
+        }
+
+        @media (max-width: 480px) {
+            .auth-box {
+                padding: 24px 16px;
+            }
+
+            .auth-header h1 {
+                font-size: 22px;
+            }
+
+            .btn {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Login Form -->
+        <div class="auth-box login-box active" id="loginBox">
+            <div class="auth-header">
+                <h1>Bem-vindo</h1>
+                <p>Faça login para acessar sua conta</p>
+            </div>
+
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input 
+                        type="email" 
+                        id="loginEmail" 
+                        name="email" 
+                        placeholder="seu@email.com" 
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Senha</label>
+                    <input 
+                        type="password" 
+                        id="loginPassword" 
+                        name="password" 
+                        placeholder="••••••••" 
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn btn-primary">Entrar</button>
+
+                <div class="form-message" id="loginMessage"></div>
+            </form>
+
+            <div class="auth-footer">
+                <p>Não tem conta? <a href="#" onclick="toggleForms(event)">Criar cadastro</a></p>
+            </div>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="auth-box signup-box" id="signupBox">
+            <div class="auth-header">
+                <h1>Criar Conta</h1>
+                <p>Preencha os dados para se cadastrar</p>
+            </div>
+
+            <form id="signupForm" class="auth-form">
+                <div class="form-group">
+                    <label for="signupName">Nome Completo</label>
+                    <input 
+                        type="text" 
+                        id="signupName" 
+                        name="name" 
+                        placeholder="Seu Nome" 
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input 
+                        type="email" 
+                        id="signupEmail" 
+                        name="email" 
+                        placeholder="seu@email.com" 
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="signupPassword">Senha</label>
+                    <input 
+                        type="password" 
+                        id="signupPassword" 
+                        name="password" 
+                        placeholder="Mínimo 6 caracteres" 
+                        required
+                        minlength="6"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="signupPasswordConfirm">Confirmar Senha</label>
+                    <input 
+                        type="password" 
+                        id="signupPasswordConfirm" 
+                        name="passwordConfirm" 
+                        placeholder="Confirme sua senha" 
+                        required
+                        minlength="6"
+                    >
+                </div>
+
+                <button type="submit" class="btn btn-primary">Criar Conta</button>
+
+                <div class="form-message" id="signupMessage"></div>
+            </form>
+
+            <div class="auth-footer">
+                <p>Já tem conta? <a href="#" onclick="toggleForms(event)">Fazer login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>
